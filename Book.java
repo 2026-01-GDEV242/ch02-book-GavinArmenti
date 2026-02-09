@@ -23,7 +23,7 @@ class Book
     }
     
     /**
-     * Return the name of the author.
+     * Returns the name of the author.
      */
     public String getAuthor()
     {
@@ -31,12 +31,26 @@ class Book
     }
     
     /**
-     * Return the title of the book.
+     * Returns the title of the book.
      */
     public String getTitle()
     {
         return title;
     }
-
-    // Add the methods here ...
+    
+    /**
+     * Prints the name of the author.
+     */
+    public void printAuthor()
+    {
+        System.out.print(author);
+    }
+    
+    /**
+     * Prints the title of the book.
+     */
+    public void printTitle()
+    {
+        System.out.print(title);
+    }
 }
