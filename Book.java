@@ -77,4 +77,13 @@ class Book
     {
         System.out.print(pages);
     }
+    
+    /**
+     * Prints the details of the book.
+     * Satisfies 2.87.
+     */
+    public void printDetails()
+    {
+        System.out.println(title+" by "+author+", with "+pages+" pages.");
+    }
 }
