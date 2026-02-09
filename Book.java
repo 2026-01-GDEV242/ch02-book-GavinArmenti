@@ -95,7 +95,13 @@ class Book
      */
     public void printDetails()
     {
-        System.out.println(title+" by "+author+", with "+pages+" pages.");
+        String message = title+" by "+author+", with "+pages+" pages. Ref: ";
+        if (refNumber.length() > 0)
+            message = message+refNumber;
+        else
+            message = message+"ZZZ";
+        
+        System.out.println(message);
     }
     
     /**
