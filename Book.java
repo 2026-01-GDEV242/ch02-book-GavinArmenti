@@ -95,7 +95,7 @@ class Book
      */
     public void printDetails()
     {
-        String message = title+" by "+author+", with "+pages+" pages. Ref: ";
+        String message = title+" by "+author+", \nwith "+pages+" pages. Ref: ";
         if (refNumber.length() > 0)
             message = message+refNumber;
         else
@@ -110,6 +110,10 @@ class Book
      */
     public void setRefNumber(String ref)
     {
-        refNumber = ref;
+        if (ref.length() >= 3)
+            refNumber = ref;
+        else
+            System.out.println("Error: Attempted to make new Ref Number\n"+
+            " less than three characters.");
     }
 }
