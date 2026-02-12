@@ -13,6 +13,7 @@ class Book
     private String title;
     private int pages;
     private String refNumber;
+    private int borrowed;
 
     /**
      * Set the author and title fields when this object
@@ -24,6 +25,7 @@ class Book
         title = bookTitle;
         pages = bookPages;
         refNumber = "";
+        borrowed = 0;
     }
     
     /**
@@ -95,11 +97,14 @@ class Book
      */
     public void printDetails()
     {
-        String message = title+" by "+author+", \nwith "+pages+" pages. Ref: ";
+        String message = title+" by "+author+", \nwith "+pages+" pages. "
+        +"Ref: ";
         if (refNumber.length() > 0)
             message = message+refNumber;
         else
             message = message+"ZZZ";
+        
+        message = message +".\nBorrowed "+borrowed+" times.";
         
         System.out.println(message);
     }
@@ -115,5 +120,23 @@ class Book
         else
             System.out.println("Error: Attempted to make new Ref Number\n"+
             " less than three characters.");
+    }
+    
+    /**
+     * Borrows the book, increasing borrowed by 1.
+     * Satisfies 9.1.
+     */
+    public void borrow()
+    {
+        borrowed +=1;
+    }
+    
+    /**
+     * Returns the number of times it was borrowed.
+     * Satisfies 9.1.
+     */
+    public int getBorrowed()
+    {
+        return borrowed;
     }
 }
