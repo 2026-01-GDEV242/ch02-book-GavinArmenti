@@ -14,18 +14,21 @@ class Book
     private int pages;
     private String refNumber;
     private int borrowed;
+    private boolean courseText;
 
     /**
      * Set the author and title fields when this object
      * is constructed.
      */
-    public Book(String bookAuthor, String bookTitle, int bookPages)
+    public Book(String bookAuthor, String bookTitle, int bookPages, 
+    boolean CourseText)
     {
         author = bookAuthor;
         title = bookTitle;
         pages = bookPages;
         refNumber = "";
         borrowed = 0;
+        courseText = CourseText;
     }
     
     /**
@@ -104,7 +107,7 @@ class Book
         else
             message = message+"ZZZ";
         
-        message = message +".\nBorrowed "+borrowed+" times.";
+        message = message +"\nBorrowed "+borrowed+" times.";
         
         System.out.println(message);
     }
@@ -138,5 +141,14 @@ class Book
     public int getBorrowed()
     {
         return borrowed;
+    }
+    
+    /**
+     * Returns whether the book is part of a course.
+     * Satisfies 9.2.
+     */
+    public boolean isCourseText()
+    {
+        return courseText;
     }
 }
